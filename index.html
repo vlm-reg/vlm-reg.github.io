@@ -232,7 +232,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Referring Expression Generation (REG) is a core task for evaluating the pragmatic competence of vision-language systems, requiring not only accurate semantic grounding but also adherence to principles of cooperative communication. However, current evaluations of vision-language models (VLMs) often overlook the pragmatic dimension, reducing REG to a region-based captioning task and neglecting Gricean maxims. In this work, we revisit REG from a pragmatic perspective, introducing a new dataset <code>RefOI</code> of 1k images annotated with both written and spoken referring expressions. Through a systematic evaluation of state-of-the-art VLMs, we identify three key failures of pragmatic competence: <strong>(1) failure to uniquely identify the referent, (2) inclusion of excessive or irrelevant information, and (3) misalignment with human pragmatic preference, such as the underuse of minimal spatial cues.</strong> We also show that standard automatic evaluations fail to capture these pragmatic violations, reinforcing superficial cues rather than genuine referential success. Our findings call for a renewed focus on pragmatically informed models and evaluation frameworks that align with real human communication.
+            Referring Expression Generation (REG) is a core task for evaluating the pragmatic competence of vision-language systems, requiring not only accurate semantic grounding but also adherence to principles of cooperative communication. 
+            However, current evaluations of vision-language models (VLMs) often overlook the pragmatic dimension, reducing REG to a region-based captioning task and neglecting Gricean maxims. 
+            In this work, we revisit REG from a pragmatic perspective, introducing a new dataset <code>RefOI</code> of 1.5k images annotated with both written and spoken referring expressions. 
+            Through a systematic evaluation of state-of-the-art VLMs, we identify three key failures of pragmatic competence: <strong>(1) failure to uniquely identify the referent, (2) inclusion of excessive or irrelevant information, and (3) misalignment with human pragmatic preference, such as the underuse of minimal spatial cues.</strong> 
+            We also show that standard automatic evaluations fail to capture these pragmatic violations, reinforcing superficial cues rather than genuine referential success. 
+            Our findings call for a renewed focus on pragmatically informed models and evaluation frameworks that align with real human communication.
           </p>
         </div>
       </div>
@@ -962,7 +967,7 @@
         <strong>Listener Compare:</strong> The human evaluation accuracy with <strong>REC</strong> (the evaluation result from CogVLM-Grounding) and computes <strong>Agree</strong> (the agreement between the two listeners). <br>
         <strong>Error Breakdown:</strong> The percentages of three types of errors: <strong>Wrong</strong> refers to a failed guess, <strong>Multi.</strong> refers to multiple potential matches, and <strong>No-Mat</strong> refers to cases where no object can be located. <br>
         <strong>Class Breakdown:</strong> The accuracy of COCO-class objects with non-COCO-class objects. The metric <strong>Δ<sub>Acc</sub></strong> shows the accuracy drop between the two categories. <br>
-        <strong>Class Co-occurrence:</strong> The accuracy of <strong>Coocc.</strong> images (images containing more than one object of the same class) with <strong>No-Coocc.</strong> images (images containing only one object of its class). Δ<sub>Acc</sub> denotes the accuracy drop between these two categories.
+        <strong>Class Co-occurrence:</strong> The accuracy of <strong>Coocc.</strong> images (images containing more than one object of the same class) with <strong>No-Coocc.</strong> images (images containing only one object of its class). <strong>Δ<sub>Acc</sub></strong> denotes the accuracy drop between these two categories.
       </p>
 
       <p style="margin-top: 20px; font-size: 1rem;">
