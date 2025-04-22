@@ -29,10 +29,10 @@
 
 
   <title>VLM-REG</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/redketchup/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/redketchup/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/redketchup/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="static/images/redketchup/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -246,6 +246,59 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- GIF carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" style="margin-top: 2rem;">Data Collection Interfaces</h2>
+      <!-- <p class="has-text-centered" style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">
+        Our interfaces for data collection.
+      </p> -->
+    
+      <div id="gif-carousel" class="carousel results-carousel">
+        <div class="item">
+          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <!-- left gif -->
+            <div style="text-align: center;">
+              <img src="static/gifs/reg_text.gif" alt="reg text" style="width: 400px;">
+              <div style="font-size: 0.9rem; margin-top: 10px;">Human Written</div>
+            </div>
+            
+            <!-- right gif -->
+            <div style="text-align: center;">
+              <img src="static/gifs/reg_audio.gif" alt="reg speech" style="width: 400px;">
+              <div style="font-size: 0.9rem; margin-top: 10px;">Human Spoken</div>
+            </div>
+          </div>
+          <h3 class="subtitle has-text-centered">
+            <div style="font-size: 1rem; margin-top: 10px;">
+            The annotation interface. The user is required to enter text or provide a speech-to-text description of the object within the red box, ensuring that another observer can uniquely identify the object in the image.
+            </div>
+          </h3>
+        </div>
+    
+        <div class="item">
+          <img src="static/gifs/rel_merged.gif" alt="rel_merged">
+          <h3 class="subtitle has-text-centered">
+            <div style="font-size: 1rem; margin-top: 10px;">
+              The human evaluation interface. The user is required to click on the corresponding object in the image based on the given description. The interface then displays the shortest distance between the clicked point and the nearest point on the mask of the target object, which will be 0 if the click is inside the mask. If the user cannot find any object matching the description or identifies multiple possible objects, they should click the corresponding button instead, and the distance will not be computed.
+            </div>
+          </h3>
+        </div>
+      
+        <div class="item">
+          <img src="static/gifs/key_info.gif" alt="Key Info Interface"/>
+          <h3 class="subtitle has-text-centered">
+            <div style="font-size: 1rem; margin-top: 10px;">
+            The minimum words annotation interface. The user is required to select the minimum words that can uniquely identify the object. The input referring expressions in this part are the ones that are evaluated as successful in the human evaluation.
+            </div>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End GIF carousel -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -1205,6 +1258,3 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
