@@ -85,9 +85,9 @@
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
               <h1 class="title is-1 publication-title">💬 Vision-Language Models Are Not Pragmatically Competent in Referring Expression Generation</h1>
             </div>
-            <!-- <h4 class="title is-size-4 publication-title" style="color: red;">COLM 2025<span style="font-weight: normal; font-style: italic;"> (Under review)</span></h4>
-            <h5 class="title is-size-5 publication-title" style="color: blueviolet;">GEM Workshop @ ACL 2025<span style="font-weight: normal; font-style: italic;"> (Under review)</span></h5>
-            <h5 class="title is-size-5 publication-title" style="color: blueviolet;">CVinW Workshop @ CVPR 2025<span style="font-weight: normal; font-style: italic;"> (Under review)</span></h5> -->
+            <h4 class="title is-size-4 publication-title" style="color: red;">COLM 2025<span style="font-weight: normal; font-style: italic;"></span></h4>
+            <h5 class="title is-size-5 publication-title" style="color: blueviolet;">CVinW Workshop @ CVPR 2025 (Spotlight)<span style="font-weight: normal; font-style: italic;"></span></h5>
+            <h5 class="title is-size-5 publication-title" style="color: blueviolet;">GEM Workshop @ ACL 2025<span style="font-weight: normal; font-style: italic;"></span></h5>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -792,6 +792,121 @@
         </div>
 
       </div>
+    </div>
+
+
+    <div class="content has-text-justified">
+      <h3 class="title is-4" style="margin-top: 100px;">Does Simple Prompting Fix Pragmatic Limitations?</h3>
+      <p>
+        Given the pragmatic failures of VLMs identified in our experiments, we further ask: <strong>Can these shortcomings be mitigated through simple prompting techniques?</strong> To investigate this, we conducted supplementary experiments on GPT-4o by evaluating two enhanced prompts that elicit better reasoning, building on our brief prompt:
+      </p>
+      <ul>
+        <li><strong>Chain-of-Thought (CoT):</strong> This prompt directs a model to "think step by step," explicitly articulating intermediate reasoning before committing to an answer.</li>
+        <li><strong>Gricean (Grn.):</strong> This prompt explicitly instructs the model to follow Gricean maxims of cooperative communication, embedding a definition sourced from Wikipedia.</li>
+      </ul>
+
+
+      <div style="overflow-x: auto; margin-top: 30px;">
+        <table border="1" cellpadding="5" cellspacing="0" style="margin: 0 auto; font-size: 0.8em; max-width: 100%; border-collapse: collapse; border: 1.5px solid; text-align: center;">
+          <tbody>
+            <tr style="border-bottom: 1.5px solid;">
+              <th>Model</th>
+              <th>Instr.</th>
+              <th>BLEU-1</th>
+              <th>BLEU-4</th>
+              <th>ROUGE-1</th>
+              <th>ROUGE-L</th>
+              <th>METEOR</th>
+              <th>CIDEr</th>
+              <th>SPICE</th>
+              <th>BERT</th>
+              <th>CLIP</th>
+              <th>REC</th>
+              <th>Human</th>
+              <th>Irrel%</th>
+            </tr>
+            <tr>
+              <td rowspan="4" style="vertical-align: middle;">GPT-4o</td>
+              <td>Dft.</td><td>7.47</td><td>0.85</td><td>11.61</td><td>10.43</td><td>17.39</td><td>0.03</td><td>7.21</td><td>84.57</td><td><strong>80.81</strong></td><td>41.29</td><td>59.80</td><td>89.81</td>
+            </tr>
+            <tr>
+              <td>Brf.</td><td><strong>25.30</strong></td><td><strong>5.78</strong></td><td><strong>28.76</strong></td><td><strong>27.36</strong></td><td>19.02</td><td>8.17</td><td><strong>15.31</strong></td><td><strong>88.11</strong></td><td>76.58</td><td>40.08</td><td>51.72</td><td><strong>52.75</strong></td>
+            </tr>
+            <tr>
+              <td>CoT</td><td>19.98</td><td>4.02</td><td>23.42</td><td>21.84</td><td>18.15</td><td>10.15</td><td>13.36</td><td>86.83</td><td>77.59</td><td><strong>46.67</strong></td><td><strong>65.59</strong></td><td>65.71</td>
+            </tr>
+            <tr>
+              <td>Grn.</td><td>21.43</td><td>4.33</td><td>25.62</td><td>24.01</td><td><strong>20.35</strong></td><td><strong>10.85</strong></td><td>13.87</td><td>87.57</td><td>78.50</td><td>42.10</td><td>63.50</td><td>62.40</td>
+            </tr>
+            <tr style="border-top: 2px solid;">
+              <td rowspan="2" style="vertical-align: middle;">Human</td>
+              <td>Spk.</td><td>66.18</td><td>22.58</td><td>70.15</td><td>66.45</td><td>48.28</td><td>112.04</td><td>42.35</td><td>93.89</td><td>71.60</td><td>64.56</td><td>92.20</td><td>9.15</td>
+            </tr>
+            <tr>
+              <td>Wrt.</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>70.43</td><td>63.69</td><td>89.29</td><td>7.29</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9rem; text-align: center;">
+          Supplementary results for reasoning-oriented prompts of GPT-4o.
+        </p>
+      </div>
+
+      <div style="overflow-x: auto; margin-top: 30px;">
+        <table border="1" cellpadding="5" cellspacing="0" style="margin: 0 auto; font-size: 0.75em; max-width: 100%; border-collapse: collapse; border: 1.5px solid black; text-align: center;">
+          <tbody>
+            <tr>
+              <th rowspan="2">Model</th>
+              <th rowspan="2">Instr.</th>
+              <th colspan="3">Listener Compare</th>
+              <th colspan="3">Error Breakdown</th>
+              <th colspan="3">Class Breakdown</th>
+              <th colspan="3">Class Co-occurrence</th>
+            </tr>
+            <tr style="border-bottom: 1.5px solid;">
+              <th>Human</th>
+              <th>REC</th>
+              <th>Agree</th>
+              <th>Wrong%</th>
+              <th>Multi.%</th>
+              <th>No-Mat%</th>
+              <th>COCO</th>
+              <th>No-COCO</th>
+              <th>Δ<sub>Acc</sub></th>
+              <th>Coocc.</th>
+              <th>No-Coocc.</th>
+              <th>Δ<sub>Acc</sub></th>
+            </tr>
+            <tr>
+              <td rowspan="4" style="vertical-align: middle;">GPT-4o</td>
+              <td>Dft.</td><td>59.80</td><td>41.29</td><td>62.00</td><td>11.98</td><td>24.04</td><td>4.18</td><td>63.31</td><td>56.28</td><td style="color: red;">-7.03</td><td>48.14</td><td>83.33</td><td style="color: red;">-35.19</td>
+            </tr>
+            <tr>
+              <td>Brf.</td><td>51.72</td><td>40.08</td><td>63.01</td><td>10.97</td><td>31.52</td><td>5.79</td><td>54.84</td><td>48.58</td><td style="color: red;">-6.26</td><td>37.36</td><td>80.69</td><td style="color: red;">-43.33</td>
+            </tr>
+            <tr>
+              <td>CoT</td><td>65.59</td><td>46.67</td><td>63.55</td><td>14.28</td><td>17.37</td><td>2.76</td><td>68.15</td><td>63.02</td><td style="color: red;">-5.13</td><td>54.98</td><td>86.99</td><td style="color: red;">-32.01</td>
+            </tr>
+            <tr>
+              <td>Grn.</td><td>63.50</td><td>42.10</td><td>60.52</td><td>14.08</td><td>19.80</td><td>2.62</td><td>65.05</td><td>61.94</td><td style="color: red;">-3.11</td><td>51.96</td><td>86.79</td><td style="color: red;">-34.83</td>
+            </tr>
+            <tr style="border-top: 2px solid;">
+              <td rowspan="2" style="vertical-align: middle;">Human</td>
+              <td>Spk.</td><td>92.20</td><td>64.56</td><td>64.96</td><td>6.93</td><td>0.74</td><td>0.13</td><td>92.07</td><td>92.58</td><td>0.51</td><td>91.74</td><td>93.50</td><td style="color: red;">-1.76</td>
+            </tr>
+            <tr>
+              <td>Wrt.</td><td>89.29</td><td>63.69</td><td>63.69</td><td>7.68</td><td>2.36</td><td>0.67</td><td>89.52</td><td>89.07</td><td style="color: red;">-0.45</td><td>88.31</td><td>91.26</td><td style="color: red;">-2.95</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9rem; text-align: center;">
+          Supplementary results breakdown for reasoning-oriented prompts of GPT-4o.
+        </p>
+      </div>
+
+      <p style="margin-top: 20px;">
+        As shown in the tables, both reasoning-oriented prompts enhance performance in human evaluations. However, most automatic metrics fail to reflect this improvement, which echoes our earlier critique that such metrics overlook pragmatic quality. Furthermore, a notable trade-off emerges: while referential success improves, the expressions become more verbose, as reflected by a higher proportion of irrelevant words. These findings suggest that although prompting helps to some extent, it is insufficient to resolve the models' underlying pragmatic limitations. Achieving human-like performance requires that pragmatic competence be instilled during training as an intrinsic capability, rather than relying solely on prompt engineering.
+      </p>
     </div>
 
     <!-- Eval Metric Critique -->
